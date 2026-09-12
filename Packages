@@ -1,6 +1,6 @@
 Package: com.judah.forgeclassic
 Name: Forge Classic
-Version: 1.0
+Version: 1.1
 Architecture: iphoneos-arm
 Description: GitHub browser and tweak finder for iOS 6 and later. Search repos, read READMEs, browse code, and download .deb files straight to the device.
 Author: Judah
@@ -9,8 +9,8 @@ Section: Utilities
 Depends: firmware (>= 6.0)
 Depiction: https://judahhuckaby-rgb.github.io/Anvil/depictions/com.judah.forgeclassic.html
 Icon: https://judahhuckaby-rgb.github.io/Anvil/icons/com.judah.forgeclassic.png
-Filename: debs/forge-classic_1.0_iphoneos-arm.deb
-Size: 183376
-MD5sum: 665bdd02b6b223b4561a368cd3148c51
-SHA1: 4e2a44e6f577693c014f38f9713a94cdf342ed35
-SHA256: 45ade6180b5c7dd3c13ef3d1379a3a43885d480200d3ca83fd7e3f22406f3e88
+Filename: debs/forge-classic_1.1_iphoneos-arm.deb
+Size: 182728
+MD5sum: c57d18fd88008e93ecd6ec762f6c943c
+SHA1: eab6361d2696d3a60d2681d49141a2e22a328f49
+SHA256: 0ef239eaa9c1d5ba7baa1da39d62ea03758372cc9232c3c248a36534153ea0fd
