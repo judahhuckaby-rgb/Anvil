@@ -1,3 +1,58 @@
+Package: ai.akemi.appsyncunified
+Name: AppSync Unified
+Version: 116.0
+Architecture: iphoneos-arm
+Description: Enables the ability to install unsigned/fakesigned iOS applications.
+Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
+Maintainer: Karen/あけみ <karen@akemi.ai>
+Section: Tweaks
+Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<= 18.2)
+Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.appsync7, com.teiron.ppsync, appsync50plus2.25pp, com.linusyang.appsync, com.sull.appsyncunified, com.sull.appsyncunifiedbeta, com.xsellize.appsync50, com.xsellize.appsync50plus, appsync50plus.178, appsync50plus2.178, cydia.net.angelxwind.appsyncunified, com.ifucker.appsync, com.sexyphonetech.appsyncunified, appsyncunifiedofficial, org.digbick.asufixed, cn.mingmei.asu623517234615234813, technology.goated.appsync, technology.goated.appsyncunified, vaginalfisting.appsynctool, science.xnu.substitute, akemi.appsink, akemi.appsyncunifed, akemi.appsyncunifed2, akemi.appsyncunifedpatched, appsyncpatched, appsyncrootless, weaponized.autism.technology.appsyncunified, ellekit (< 1.1)
+Replaces: us.hackulo.appsync50, net.angelxwind.appsyncunified
+Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
+Filename: debs/ai.akemi.appsyncunified_116.0_iphoneos-arm.akemi-git-235aca6cddfbdc9fa87fcb5b2aec2df37ed6d65a.deb
+Size: 51658
+MD5sum: 536009a11dad57e48a5563224eaffaff
+SHA1: e0fa412cb3c26718887edd834804c88909297079
+SHA256: 0036f28fcbdb165d4f58968a237ca9fe7b6ed33fea25b9a5eb1fc141f6bf5a09
+Homepage: https://cydia.akemi.ai/
+Provides: appsync, net.angelxwind.appsyncunified
+Installed-Size: 636
+
+Package: com.cureux.cc26
+Name: CC26
+Version: 1.0.7
+Architecture: iphoneos-arm
+Description: A sleek reimagination of Control Center.
+Author: therealhoodboy
+Maintainer: therealhoodboy
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, firmware (>= 13.0), firmware (<< 18.0)
+Conflicts: com.dvntm.cc18
+Icon: https://raw.githubusercontent.com/therealhoodboy/coreux/7cef61c0b96f05e285d17d030f9135c4e951e420/assets/tweak-icons/cc26.png
+Filename: debs/com.cureux.cc26_1.0.7_iphoneos-arm.deb
+Size: 838926
+MD5sum: e3117e2648137b3949fba8ce41c52635
+SHA1: c84b80336168021da89712fb21731825f6964fbf
+SHA256: 0638bf4d0ae6e1279e2a085b6dca7f5a7fa835458fc8021ce31f7f5720fb4131
+Provides: com.cureux.cc26
+Installed-Size: 1500
+
+Package: com.ivintagelover.solidglassrl
+Name: Solid Glass Rootless
+Version: 27.0
+Architecture: iphoneos-arm64
+Description: iOS 27, 26, and 18 icons for older devices.
+Author: MacVerse
+Maintainer: MacVerse
+Section: Themes
+Conflicts: com.ivintagelover.solidglass27
+Filename: debs/com.ivintagelover.solidglass_rootless.deb
+Size: 54195328
+MD5sum: ced94a3fc438649734fbd700b343ba96
+SHA1: 9244965027c161456f6508103aa51b13e98ee5b9
+SHA256: 0819baccfe8cbf3c37e9da5a13fea4db448a595ff312c421255643fc4d5cf098
+
 Package: com.judah.forgeclassic
 Name: Forge Classic
 Version: 1.2
@@ -14,3 +69,20 @@ Size: 182526
 MD5sum: 309361155d1e1e2b98f05876cdf83cf5
 SHA1: e312ce4f88d79c3605646a4a9bc47bc5e0acb1b5
 SHA256: 1649e16d02ef81735949d647ab5d544018cc114b3d9c655147b4ab4bd0144ba4
+
+Package: dylv.liquidass
+Name: Liquid (Gl)ass
+Version: 0.1.0b
+Architecture: iphoneos-arm64
+Description: next level diarrhea
+Author: dylv
+Maintainer: dylv
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 14.0), firmware (<< 26.0), preferenceloader
+Icon: https://winaviation.github.io/repo/depictions/dylv.liquidass/icon.png
+Filename: debs/dylv.liquidass_0.1.0b_iphoneos-arm64.deb
+Size: 1304024
+MD5sum: 1d71b14a72cbd5b6f40f3c7625a800fc
+SHA1: 0cc3c538c9312d9c638fa8c29ad1da0f66993170
+SHA256: e1945e07441cc249add8f8e22cbde53ba71b7f0314ca40aa2571265746fb7a32
+Installed-Size: 3596
