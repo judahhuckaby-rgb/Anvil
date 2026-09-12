@@ -7,7 +7,8 @@ Author: Judah
 Maintainer: Judah
 Section: Utilities
 Depends: firmware (>= 6.0)
-Icon: file:///Applications/ForgeClassic.app/Icon@2x.png
+Depiction: https://judahhuckaby-rgb.github.io/Anvil/depictions/com.judah.forgeclassic.html
+Icon: https://judahhuckaby-rgb.github.io/Anvil/icons/com.judah.forgeclassic.png
 Filename: debs/forge-classic_1.0_iphoneos-arm.deb
 Size: 183376
 MD5sum: 665bdd02b6b223b4561a368cd3148c51
