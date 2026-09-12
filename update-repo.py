@@ -8,7 +8,8 @@ Run it from the repo folder after adding or replacing a .deb in debs/:
     git add -A && git commit -m "Forge Classic 1.1" && git push
 
 It reads every .deb in debs/, writes Packages / Packages.gz / Packages.bz2,
-refreshes Release, and regenerates index.html. Pure standard library, so it
+refreshes Release, and regenerates index.html. Any .ipa in ipas/ is listed on
+the page too, with a one-tap TrollStore install link. Pure standard library, so it
 works on a stock Mac with no extra tools installed.
 """
 
@@ -19,9 +20,12 @@ import html
 import io
 import os
 import re
+import plistlib
 import subprocess
 import sys
 import tarfile
+import urllib.parse
+import zipfile
 
 # ---------------------------------------------------------------- repo details
 
@@ -103,6 +107,42 @@ def version_key(value):
     return [int(part) if part.isdigit() else part for part in re.split(r"(\d+)", value)]
 
 
+# ---------------------------------------------------------------- .ipa parsing
+
+
+def ipa_info(path):
+    """Pulls name / version / minimum iOS out of an .ipa's Info.plist."""
+    with zipfile.ZipFile(path) as archive:
+        names = [n for n in archive.namelist() if re.match(r"^Payload/[^/]+\.app/Info\.plist$", n)]
+        if not names:
+            raise ValueError("no app bundle inside %s" % path)
+        info = plistlib.loads(archive.read(names[0]))
+    return {
+        "name": info.get("CFBundleName") or info.get("CFBundleDisplayName") or os.path.basename(path),
+        "version": info.get("CFBundleShortVersionString", "") or str(info.get("CFBundleVersion", "")),
+        "minimum": info.get("MinimumOSVersion", ""),
+        "identifier": info.get("CFBundleIdentifier", ""),
+        "file": os.path.basename(path),
+        "size": os.path.getsize(path),
+    }
+
+
+def collect_ipas():
+    folder = os.path.join(HERE, "ipas")
+    if not os.path.isdir(folder):
+        return []
+    apps = []
+    for name in sorted(os.listdir(folder)):
+        if not name.endswith(".ipa"):
+            continue
+        try:
+            apps.append(ipa_info(os.path.join(folder, name)))
+            print("  listed %s" % name)
+        except Exception as error:
+            print("  skipping %s (%s)" % (name, error))
+    return apps
+
+
 # ---------------------------------------------------------------- base url
 
 
@@ -182,8 +222,10 @@ def build():
     release = "\n".join("%s: %s" % (key, value) for key, value in REPO.items()) + "\n"
     write(os.path.join(HERE, "Release"), release.encode("utf-8"))
 
+    apps = collect_ipas()
+
     write(os.path.join(HERE, ".nojekyll"), b"")
-    write(os.path.join(HERE, "index.html"), landing_page(newest, url).encode("utf-8"))
+    write(os.path.join(HERE, "index.html"), landing_page(newest, apps, url).encode("utf-8"))
 
     print("\nWrote Packages, Packages.gz, Packages.bz2, Release and index.html")
     if url:
@@ -198,7 +240,12 @@ def write(path, data):
         handle.write(data)
 
 
-def landing_page(newest, url):
+def human_size(size):
+    mb = size / (1024.0 * 1024.0)
+    return "%.1f MB" % mb if mb >= 1 else "%.0f KB" % (size / 1024.0)
+
+
+def landing_page(newest, apps, url):
     rows = []
     for package in sorted(newest):
         fields = newest[package][0]
@@ -211,12 +258,32 @@ def landing_page(newest, url):
                 desc=html.escape(fields.get("Description", "").split("\n")[0]),
             )
         )
+    app_rows = []
+    for app in apps:
+        ipa_url = "%sipas/%s" % (url, app["file"]) if url else app["file"]
+        install = "apple-magnifier://install?url=" + urllib.parse.quote(ipa_url, safe="")
+        meta = ["v" + app["version"]] if app["version"] else []
+        if app["minimum"]:
+            meta.append("iOS %s+" % app["minimum"])
+        meta.append(human_size(app["size"]))
+        app_rows.append(
+            "<tr><td><strong>{name}</strong><br><span class=id>{meta}</span></td>"
+            "<td class=right><a class=\"button small\" href=\"{install}\">Install</a>"
+            "<a class=\"plain\" href=\"{ipa}\">.ipa</a></td></tr>".format(
+                name=html.escape(app["name"]),
+                meta=html.escape(" · ".join(meta)),
+                install=html.escape(install),
+                ipa=html.escape(ipa_url),
+            )
+        )
+    apps_section = APPS_SECTION.format(rows="\n".join(app_rows)) if app_rows else ""
     plain = url.replace("https://", "").replace("http://", "") if url else "your-repo-url/"
     return PAGE.format(origin=html.escape(REPO["Origin"]),
                        description=html.escape(REPO["Description"]),
                        url=html.escape(url or "your-repo-url/"),
                        plain=html.escape(plain),
-                       rows="\n".join(rows))
+                       rows="\n".join(rows),
+                       apps=apps_section)
 
 
 PAGE = """<!doctype html>
@@ -240,6 +307,9 @@ PAGE = """<!doctype html>
   td {{ padding: 10px 6px; border-top: 1px solid #ececf1; vertical-align: top; font-size: 15px; }}
   tr:first-child td {{ border-top: none; }}
   .id {{ color: #8a8a95; font-size: 12px; }}
+  td.right {{ text-align: right; white-space: nowrap; }}
+  a.button.small {{ padding: 7px 14px; margin: 0 0 0 6px; font-size: 14px; }}
+  a.plain {{ color: #6b6b76; text-decoration: none; font-size: 13px; margin-left: 10px; }}
 </style>
 </head>
 <body>
@@ -258,13 +328,25 @@ PAGE = """<!doctype html>
 
   <div class="card">
     <strong>Packages</strong>
+    <p style="color:#6b6b76;font-size:14px;margin:2px 0 10px">Install these through Cydia, Sileo or Zebra after adding the repo above.</p>
     <table>
 {rows}
     </table>
   </div>
+{apps}
 </div>
 </body>
 </html>
+"""
+
+APPS_SECTION = """
+  <div class="card">
+    <strong>Apps for TrollStore</strong>
+    <p style="color:#6b6b76;font-size:14px;margin:2px 0 10px">Open this page on the device and tap Install. Needs TrollStore, with its URL scheme enabled.</p>
+    <table>
+{rows}
+    </table>
+  </div>
 """
 
 if __name__ == "__main__":
