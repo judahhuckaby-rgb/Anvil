@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anvil</title>
+<style>
+  body { font: 16px/1.5 -apple-system, system-ui, "Helvetica Neue", Arial, sans-serif;
+         margin: 0; padding: 32px 20px 60px; color: #1c1c1e; background: #f6f6f8; }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 30px; margin: 0 0 4px; }
+  p.sub { color: #6b6b76; margin: 0 0 24px; }
+  .card { background: #fff; border-radius: 14px; padding: 18px 20px; margin-bottom: 18px;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  code { background: #ececf1; padding: 2px 6px; border-radius: 5px; font-size: 14px; word-break: break-all; }
+  a.button { display: inline-block; background: #ff7a1a; color: #fff; text-decoration: none;
+             padding: 11px 18px; border-radius: 10px; font-weight: 600; margin: 6px 8px 6px 0; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 10px 6px; border-top: 1px solid #ececf1; vertical-align: top; font-size: 15px; }
+  tr:first-child td { border-top: none; }
+  .id { color: #8a8a95; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Anvil</h1>
+  <p class="sub">Tweaks and apps by Judah</p>
+
+  <div class="card">
+    <strong>Add this repo</strong>
+    <p><code>your-repo-url/</code></p>
+    <a class="button" href="cydia://url/https://cydia.saurik.com/api/share#?source=your-repo-url/">Add to Cydia</a>
+    <a class="button" href="sileo://source/your-repo-url/">Add to Sileo</a>
+    <a class="button" href="zbra://sources/add/your-repo-url/">Add to Zebra</a>
+    <p style="color:#6b6b76;font-size:14px;margin-bottom:0">On an older device, open Cydia → Sources → Edit → Add and type <code>your-repo-url/</code></p>
+  </div>
+
+  <div class="card">
+    <strong>Packages</strong>
+    <table>
+<tr><td><strong>Forge Classic</strong><br><span class=id>com.judah.forgeclassic</span></td><td>1.0</td><td>GitHub browser and tweak finder for iOS 6 and later. Search repos, read READMEs, browse code, and download .deb files straight to the device.</td></tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
