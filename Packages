@@ -38,21 +38,6 @@ SHA256: 0638bf4d0ae6e1279e2a085b6dca7f5a7fa835458fc8021ce31f7f5720fb4131
 Provides: com.cureux.cc26
 Installed-Size: 1500
 
-Package: com.ivintagelover.solidglassrl
-Name: Solid Glass Rootless
-Version: 27.0
-Architecture: iphoneos-arm64
-Description: iOS 27, 26, and 18 icons for older devices.
-Author: MacVerse
-Maintainer: MacVerse
-Section: Themes
-Conflicts: com.ivintagelover.solidglass27
-Filename: debs/com.ivintagelover.solidglass_rootless.deb
-Size: 54195328
-MD5sum: ced94a3fc438649734fbd700b343ba96
-SHA1: 9244965027c161456f6508103aa51b13e98ee5b9
-SHA256: 0819baccfe8cbf3c37e9da5a13fea4db448a595ff312c421255643fc4d5cf098
-
 Package: com.judah.forgeclassic
 Name: Forge Classic
 Version: 1.2
@@ -69,6 +54,29 @@ Size: 182526
 MD5sum: 309361155d1e1e2b98f05876cdf83cf5
 SHA1: e312ce4f88d79c3605646a4a9bc47bc5e0acb1b5
 SHA256: 1649e16d02ef81735949d647ab5d544018cc114b3d9c655147b4ab4bd0144ba4
+
+Package: com.judahhuckaby.hammer
+Name: Hammer
+Version: 1.2
+Architecture: iphoneos-arm
+Description: Fast, reliable package manager for iOS 5 and 6
+Hammer replaces Cydia on iOS 5 and 6 devices. It has its own modern HTTPS
+(TLS 1.2/1.3), so current repositories load again, refreshes sources without
+losing packages when one fails, hides packages made for other iOS versions,
+repacks modern .debs so the old dpkg can install them, and rescues dead
+repositories from SaurikIT's archives and the Internet Archive.
+It uses the same package database as Cydia, so everything stays installed.
+Author: Judah Huckaby
+Maintainer: Judah Huckaby
+Section: Packaging
+Depends: firmware (>= 5.0), dpkg
+Icon: file:///Applications/Hammer.app/Icon.png
+Filename: debs/com.judahhuckaby.hammer_1.2_iphoneos-arm.deb
+Size: 713672
+MD5sum: eb7cecd97961bb8c4dee6295906272ec
+SHA1: 280a1b12a95f8f4ec2a6ec528baf70d1c7626450
+SHA256: 60b5095e78494b0c897b55aa6cca2502bfdb407ed003ad2c5542226ba306204b
+Tag: purpose::uikit, role::enduser
 
 Package: dylv.liquidass
 Name: Liquid (Gl)ass
