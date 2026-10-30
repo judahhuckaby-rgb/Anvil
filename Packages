@@ -57,7 +57,7 @@ SHA256: 1649e16d02ef81735949d647ab5d544018cc114b3d9c655147b4ab4bd0144ba4
 
 Package: com.judahhuckaby.hammer
 Name: Hammer
-Version: 1.3
+Version: 1.4
 Architecture: iphoneos-arm
 Description: Fast, reliable package manager for iOS 5 and 6
 Hammer replaces Cydia on iOS 5 and 6 devices. It has its own modern HTTPS
@@ -70,12 +70,12 @@ Author: Judah Huckaby
 Maintainer: Judah Huckaby
 Section: Packaging
 Depends: firmware (>= 5.0), dpkg
-Icon: file:///Applications/Hammer.app/Icon.png
-Filename: debs/com.judahhuckaby.hammer_1.3_iphoneos-arm.deb
-Size: 735156
-MD5sum: 1ca1b67c32d08042220109abe167ce27
-SHA1: 605f95874832738735341660d98fc96cd6a3e311
-SHA256: d5c28f0efe248a8092094d56ecf89e03987ba42511472367f12cc74a709b3edb
+Icon: file:///Applications/Hammer.app/PackageIcon@2x.png
+Filename: debs/com.judahhuckaby.hammer_1.4_iphoneos-arm.deb
+Size: 779218
+MD5sum: ed42fff1863ba4483fa33ac6a3a76d63
+SHA1: 757946ceb2de05edbbde7f2813323e9138f95621
+SHA256: 8fc763306b02aa42fd427722aedd1fa0c570abe5a4a8c8fb0897212fa40494e1
 Tag: purpose::uikit, role::enduser
 
 Package: dylv.liquidass
