@@ -80,18 +80,18 @@ Tag: purpose::uikit, role::enduser
 
 Package: com.judahhuckaby.respawn
 Name: Respawn
-Version: 1.1.0
+Version: 1.2.0
 Architecture: iphoneos-arm
-Description: Brings back the Apple services iOS 6 lost, on the free Respawn server: Game Center (sign-in, friends, leaderboards, achievements, challenges, turn-based games) and Weather & Stocks. Open the Respawn app to choose what to turn on. Settings > Respawn (in place of iCloud).
+Description: Brings back the Apple services iOS 6 lost, on the free Respawn server. Sign in once with your Respawn ID in Settings > Respawn (where iCloud was) and Game Center signs in for you: friends, leaderboards, achievements, challenges and turn-based games. Weather & Stocks work again too. A setup opens after you install.
 Author: Judah Huckaby
 Maintainer: Judah Huckaby
 Section: Tweaks
-Depends: mobilesubstrate, preferenceloader, firmware (>= 6.0), firmware (<< 7.0)
-Filename: debs/com.judahhuckaby.respawn_1.1.0_iphoneos-arm.deb
-Size: 55344
-MD5sum: d80d63e7d03eb3a2475ccfe5174a28a1
-SHA1: c16b5a7c533f1c6573149baf4646d1be47e6de20
-SHA256: 5e069ecbb33993a212e1737fe33023aa838653d28e5e9dcf2a4d48a20bafdb1a
+Depends: mobilesubstrate, firmware (>= 6.0), firmware (<< 7.0)
+Filename: debs/com.judahhuckaby.respawn_1.2.0_iphoneos-arm.deb
+Size: 290900
+MD5sum: f84404d47932b32d8b8bd9117ba01332
+SHA1: aa6d3224973f30b3dbef5e231d8c078f8d7692c1
+SHA256: 0c0349fb4a73b8515684526d3e62046852a7a98878937c2cc973ac4db8fc590d
 
 Package: dylv.liquidass
 Name: Liquid (Gl)ass
