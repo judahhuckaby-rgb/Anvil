@@ -80,18 +80,18 @@ Tag: purpose::uikit, role::enduser
 
 Package: com.judahhuckaby.respawn
 Name: Respawn
-Version: 1.0.8
+Version: 1.1.0
 Architecture: iphoneos-arm
-Description: Brings Game Center back on iOS 6. Points Game Center at your own Respawn server (Cloudflare Workers) for sign-in, friends, games played, leaderboards and achievements. While it's working, Game Center says "Respawn ID" instead of "Apple ID". Settings > Respawn.
+Description: Brings back the Apple services iOS 6 lost, on the free Respawn server: Game Center (sign-in, friends, leaderboards, achievements, challenges, turn-based games) and Weather & Stocks. Open the Respawn app to choose what to turn on. Settings > Respawn (in place of iCloud).
 Author: Judah Huckaby
 Maintainer: Judah Huckaby
 Section: Tweaks
 Depends: mobilesubstrate, preferenceloader, firmware (>= 6.0), firmware (<< 7.0)
-Filename: debs/com.judahhuckaby.respawn_1.0.8_iphoneos-arm.deb
-Size: 20052
-MD5sum: 13422076c864dfadb0643b6cf76d5afb
-SHA1: 9afa96c365c66bfe4b805c97f697d156dab8fce5
-SHA256: de721fcb82fb271a049a587a8657d335bd8326aafa44b19fdc02d1fd34a213b0
+Filename: debs/com.judahhuckaby.respawn_1.1.0_iphoneos-arm.deb
+Size: 55344
+MD5sum: d80d63e7d03eb3a2475ccfe5174a28a1
+SHA1: c16b5a7c533f1c6573149baf4646d1be47e6de20
+SHA256: 5e069ecbb33993a212e1737fe33023aa838653d28e5e9dcf2a4d48a20bafdb1a
 
 Package: dylv.liquidass
 Name: Liquid (Gl)ass
