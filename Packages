@@ -80,18 +80,18 @@ Tag: purpose::uikit, role::enduser
 
 Package: com.judahhuckaby.respawn
 Name: Respawn
-Version: 1.2.2
+Version: 1.3.0
 Architecture: iphoneos-arm
-Description: Brings back the Apple services iOS 6 lost, on the free Respawn server. Sign in once with your Respawn ID in Settings > Respawn (where iCloud was) and Game Center signs in for you: friends, leaderboards, achievements, challenges and turn-based games. Weather & Stocks work again too. A setup opens after you install.
+Description: Brings back the Apple services iOS 6 lost, on the free Respawn server. Sign in once with your Respawn ID in Settings > Respawn (where iCloud was) and Game Center signs in for you: friends, leaderboards, achievements, challenges and turn-based games. New in 1.3: Respawn Cloud syncs your Contacts, Calendars and Reminders, Find My iPhone locates a lost device and can play a sound or show a message, and you can protect your Respawn ID with two-factor authentication. Weather & Stocks work too. A setup opens after you install.
 Author: Judah Huckaby
 Maintainer: Judah Huckaby
 Section: Tweaks
 Depends: mobilesubstrate, firmware (>= 6.0), firmware (<< 7.0)
-Filename: debs/com.judahhuckaby.respawn_1.2.2_iphoneos-arm.deb
-Size: 300242
-MD5sum: 03de79c0fb635fa686acff50591bacac
-SHA1: 5e92220e671ede98372442dd831902657cfb1243
-SHA256: 8a2b383e903de7bff3ea9132f8e3c44d269a9298d9f2e2796718875fe34de64e
+Filename: debs/com.judahhuckaby.respawn_1.3.0_iphoneos-arm.deb
+Size: 483040
+MD5sum: 81ea3d1d8cad17f4b8c4c778bd638f37
+SHA1: 2d5ca9bd5ef3c560c46c929db7760e764a1dc3d0
+SHA256: 81d66cb8c136d2ab0f6709132ff6868100f5208189f44d08a7c0f26073b7aed0
 
 Package: dylv.liquidass
 Name: Liquid (Gl)ass
